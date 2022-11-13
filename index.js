@@ -1,14 +1,16 @@
-import  Express  from "express";
+import  express  from "express";
 import  cors  from 'cors'
+import  router from "./routes/rutas.js"
 
-const lib = Express()
+const lib = express()
 lib.use(cors())
-lib.use(Express.json())
+lib.use(express.json())
+lib.use('/',router)
 
-lib.get('/',(req,res)=>{
+/*lib.get('/',(req,res)=>{
     res.send('Bienvenidos GRUPO G31')
-})
+})*/
 
-lib.listen(8000, () => {
+lib.listen(5000, () => {
     console.log('Servidor Corriendo en http://localhost:5000/')
 })
