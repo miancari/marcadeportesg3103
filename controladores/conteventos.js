@@ -25,9 +25,9 @@ export const mos_un_evento = (req, res) => {
 
 export const actualizar_evento = (req,res) => {
     const {id} = req.params;
-    const { fecha, equipo1, equipo2, marcador1, marcador2, evento} = req.body;
+    const { fecha, equipo1, equipo2, marcador1, marcador2, t_evento} = req.body;
     eventos
-        .updateOne({ _id: id}, { $set: {fecha, equipo1, equipo2, marcador1, marcador2, evento }})
+        .updateOne({ _id: id}, { $set: {fecha, equipo1, equipo2, marcador1, marcador2, t_evento }})
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error}));
 };

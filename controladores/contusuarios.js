@@ -34,9 +34,9 @@ export const borrar_usuario = (req,res) => {
 
 export const actualizar_usuario = (req,res) => {
     const {id} = req.params;
-    const { nomuser, password, correo} = req.body;
+    const { nom_usuario, contraseña, correo} = req.body;
     usuarios
-        .updateOne({ _id: id}, { $set: {nomuser, password, correo }})
+        .updateOne({ _id: id}, { $set: {nom_usuario, contraseña, correo }})
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error}));
 };
