@@ -35,6 +35,10 @@ export const borrar_usuario = (req,res) => {
 export const actualizar_usuario = (req,res) => {
     const {id} = req.params;
     const { nom_usuario, contraseña, correo} = req.body;
+    const user = this
+    const salt = bcrypt.genSaltSync(12);
+    const hash = bcrypt.hashSync(password, salt);
+    password = hash;
     usuarios
         .updateOne({ _id: id}, { $set: {nom_usuario, contraseña, correo }})
         .then((data) => res.json(data))
