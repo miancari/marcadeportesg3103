@@ -50,7 +50,7 @@ usuariosSchema.statics.login = login;
 function login(correo,contraseña) {
     console.log("El correo es:", correo);
     console.log("La contraseña es: ", contraseña);
-    if(!Valido(correo)){throw new Error('El correo es invalido');}
+    if(!Valido(correo)) {throw new Error('El correo es invalido');}
 
     else { return this.findOne({correo})
             .then(usuarios => {

@@ -1,4 +1,4 @@
-FROM node:16.16
+FROM node:18.12
 
 WORKDIR /lib
 
@@ -8,4 +8,4 @@ RUN npm install
 
 COPY . .
 
-CMD ["node", "index.js" ]
+CMD ["npm", "start" ]

@@ -20,7 +20,7 @@ router.post('/login', login);
 
 router.post('/regusuario', regusuario);
 router.get('/mos_usuario', requireToken, mostrarusuario);
-router.get('/muser/:id', mos_un_usuario);
+router.get('/mos_usuario/:id', mos_un_usuario);
 router.put('/act_usuario/:id', actualizar_usuario);
 router.delete('/borr_usuario/:id', borrar_usuario)
 
